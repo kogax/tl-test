@@ -1,0 +1,6 @@
+%h1 Uploads Lists
+- @uploads.each do |upload|
+  %label Filename
+  = upload.filename
+  = link_to "Download", upload.url
+  %br

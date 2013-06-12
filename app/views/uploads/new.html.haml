@@ -1,0 +1,9 @@
+= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+%h1 Upload an image
+= form_for @upload, :html => { :id => 'upload' } do |form|
+  = transloadit :s3_store
+  = form.label      :file, 'File to upload'
+  = form.file_field :file
+  = form.collection_select(:category_id, Category.all, :id, :name, :prompt => false)
+  = form.submit
+= transloadit_jquerify :upload, :wait => true

@@ -1,0 +1,10 @@
+%h1 Resized upload image
+=# image_tag params[:transloadit][:results][:original].first[:url]
+Full
+= params[:transloadit]
+Results
+= params[:transloadit][:results]
+Results/Original
+= params[:transloadit][:results][":original"]
+IMG
+= image_tag params[:transloadit][:results][":original"][0]["url"]
